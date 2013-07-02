@@ -36,9 +36,9 @@ production:
   encoding: utf8
   reconnect: false
   pool: 5
-  database: railsapp
-  username: admin1ira2nQ
-  password: lI2zWemcRGF5
+  database: autobotz
+  username: adminXu7shwk
+  password: 817g-1Fy2FE3
   host: <%=ENV['OPENSHIFT_MYSQL_DB_HOST']%>
   port: <%=ENV['OPENSHIFT_MYSQL_DB_PORT']%>
   #socket: <%=ENV['OPENSHIFT_MYSQL_DB_SOCKET']%>
