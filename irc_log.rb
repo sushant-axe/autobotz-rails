@@ -3,9 +3,9 @@ require "erb"
 require 'cinch'
 require 'sanitize'
 
+#127.11.185.2 -p 16379
 
-
-redis = Redis.new(:host => '127.3.164.1', :port => 15008) #This is for development
+redis = Redis.new(:host => '127.11.185.2', :port => 16379) #This is for development
 # redis = Redis::new(:path=>"#{ENV['OPENSHIFT_GEAR_DIR']}tmp/redis.sock") #This is for production
 
 #================================================This is the code of the bot ===================================
@@ -19,7 +19,7 @@ class Logger
 
   def initialize(ip,port) 
     #@redis = Redis.new(:host => ip, :port => port) #This is for development
-     @redis = Redis.new(:host => '127.3.164.1', :port => 15008)
+     @redis = Redis.new(:host => '127.11.185.2', :port => 16379)
     #@redis = Redis::new(:path=>"#{ENV['OPENSHIFT_GEAR_DIR']}tmp/redis.sock") #This is for production
   end
 
