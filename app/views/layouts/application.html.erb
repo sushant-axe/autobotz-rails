@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Autobotz</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<h1><strong>#NITK-Autobotz.</strong></h1>
+	<div class="content">
+
+		<%= yield %>
+	</div>
+	<div class="footer">
+		<p><strong>(C)Nitk-Autobotz Team.</strong></p>
+	</div>
+</body>
+</html>

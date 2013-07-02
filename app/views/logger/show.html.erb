@@ -1,0 +1,12 @@
+<h3 class = "log-date"><strong>Showing log for : <%= @date %></strong></h3>
+<div class = "show-log">
+<table>
+	<% @messages.each do |msg| %>
+	<tr>
+		<td><%=" #{msg}" %></td>
+	</tr>
+	<% end %>
+</table>
+
+</div>
+<%= link_to("<< Back" , {:controller => 'logger', :action => 'home'} , :class => 'backlinks') %>
