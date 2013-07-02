@@ -24,8 +24,12 @@ end
 
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+
+group :bot do
 gem 'cinch'
 gem 'sanitize'
+gem 'redis'
+end
 
 
 # To use ActiveModel has_secure_password

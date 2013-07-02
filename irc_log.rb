@@ -3,7 +3,7 @@
 #require 'sanitize'
 require 'rubygems'
 require 'bundler'
-Bundler.require(:default)
+Bundler.require(:bot)
 #127.11.185.2 -p 16379
 
 redis = Redis.new(:host => '127.11.185.2', :port => 16379) #This is for development
