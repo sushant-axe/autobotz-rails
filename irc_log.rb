@@ -17,7 +17,7 @@ $key = time.day.to_s + "-" + time.month.to_s + "-" + time.year.to_s
 class Logger
 
   attr_accessor :redis
-
+on 
   def initialize(ip,port) 
     #@redis = Redis.new(:host => ip, :port => port) #This is for development
      @redis = Redis.new(:host => '127.11.185.2', :port => 16379)
@@ -30,14 +30,7 @@ class Logger
 
   def get_log_time
     t = get_time
-    if t.hour < 10 && t.min <10
-      "0#{t.hour}:0#{t.min}"
-    elsif t.hour < 10
-      "0#{t.hour}:#{t.min}"
-    elsif t.min < 10
-      "#{t.hour}:0#{t.min}"
-    else
-      "#{t.hour}:#{t.min}"
+    "#{t.hour}:#{t.min}"
     end
   end
 

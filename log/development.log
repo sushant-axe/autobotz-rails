@@ -5612,3 +5612,17 @@ Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 Started GET "/assets/logger.js?body=1" for 127.0.0.1 at 2013-06-27 21:11:48 +0530
 Served asset /logger.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-02 16:38:52 +0530
+Processing by LoggerController#home as HTML
+Completed 500 Internal Server Error in 1ms
+
+Redis::CannotConnectError (Error connecting to Redis on 127.11.185.2:16379 (ECONNREFUSED)):
+  app/controllers/logger_controller.rb:4:in `home'
+
+
+  Rendered /home/sushant/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /home/sushant/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /home/sushant/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.5ms)
