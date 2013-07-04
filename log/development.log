@@ -12475,3 +12475,4 @@ Started GET "/assets/next.png" for 127.0.0.1 at 2013-07-04 16:01:08 +0530
 Served asset /next.png - 304 Not Modified (0ms)
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
