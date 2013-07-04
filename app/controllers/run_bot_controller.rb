@@ -36,7 +36,7 @@ class Logger
   end
 
   def log(channel,user,msg)
-    temp = Time.now.day.to_s + "-" + Time.now.month.to_s + "-" + Time.now.year.to_s
+    temp = get_time.day.to_s + "-" + get_time.month.to_s + "-" +get_time.year.to_s
     if(temp != $key )
       $key = temp
     end
@@ -45,11 +45,11 @@ class Logger
   end
 
   def bot_log(channel,msg)   
-    temp = Time.now.day.to_s + "-" + Time.now.month.to_s + "-" + Time.now.year.to_s
+    temp = get_time.day.to_s + "-" + get_time.month.to_s + "-" +get_time.year.to_s
     if(temp != $key)
       $key = temp
     end
-    @redis.RPUSH "#{$key}", "<#{get_log_time}>" + "autobotz"+ ":"+ msg
+    @redis.RPUSH "#{$key}", "<#{get_log_time}>" + "Autobotz-JetFire"+ ":"+ msg
   end
 
 end
