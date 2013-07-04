@@ -102,3 +102,4 @@ class RunBotController < ApplicationController
 def run
 t1 = Thread.new{bot.start}
 end
+end
