@@ -102,8 +102,6 @@ class RunBotController < ApplicationController
 def run
 t1 = Thread.new
 {
-	job1 = fork do
 	bot.start
-	end
 }
 end
