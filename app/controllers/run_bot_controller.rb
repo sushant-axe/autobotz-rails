@@ -53,7 +53,7 @@ class Logger
   end
 
 end
-bot = Cinch::Bot.new do
+$bot = Cinch::Bot.new do
   logger = Logger.new('127.0.0.1',6379)
   configure do |c|
     c.server = "irc.freenode.org"
@@ -100,6 +100,6 @@ class RunBotController < ApplicationController
 
 
 def run
-t1 = Thread.new{bot.start}
+t1 = Thread.new{$bot.start}
 end
 end
