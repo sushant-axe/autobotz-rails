@@ -86,7 +86,7 @@ bot = Cinch::Bot.new do
   end
 
   on :message,"!log" do |m|
-    msg = "#{m.user.nick} Log can be found at http://localhost:3000/#{$key}"
+    msg = "#{m.user.nick} Log can be found at http://autobotz-sushant94.rhcloud.com/#{$key}"
     m.reply(msg)
     logger.bot_log(m.channel,msg)
   end
