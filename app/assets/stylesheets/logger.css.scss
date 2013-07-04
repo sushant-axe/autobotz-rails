@@ -1,28 +1,17 @@
-$linkColor : white;
+@import "bootswatch/cyborg/variables";
 @import "bootstrap";
+@import "bootswatch/cerulean/bootswatch";
 
-body{
-background: rgb(63,76,107); /* Old browsers */
-background: -moz-linear-gradient(left,  rgba(63,76,107,1) 0%, rgba(63,76,107,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(63,76,107,1)), color-stop(100%,rgba(63,76,107,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(left,  rgba(63,76,107,1) 0%,rgba(63,76,107,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(left,  rgba(63,76,107,1) 0%,rgba(63,76,107,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(left,  rgba(63,76,107,1) 0%,rgba(63,76,107,1) 100%); /* IE10+ */
-background: linear-gradient(to right,  rgba(63,76,107,1) 0%,rgba(63,76,107,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f4c6b', endColorstr='#3f4c6b',GradientType=1 ); /* IE6-9 */
-color : white;
-}
+
 h1
 {
 	text-weight: bold;
 }
-.log
+.well1
 {
 	position: relative;
 	width:20%;
 	margin : 0 auto;
-	border-radius : 10px;
-	border : 1px solid #aaabac;
 	padding : 20px;
 	h5 {text-align : center;}
 }
@@ -34,17 +23,16 @@ h3.log-date
 {
 	position:relative;
 	padding-left : 20px;
-	padding-top : 20px;
-	padding-bottom : 100px;
+	padding-top : 5px;
+	padding-bottom : 0px;
 	margin : 0 auto;
-	top: 50px;
-	width :80%;
+	top: 40px;
+	width :90%;
 	border-radius : 10px;
-	border: 2px dashed #adadad;
 
 	table
 	{
-		font-size: 20px;
+		font-size: 18px;
 
 	}
 }
@@ -59,8 +47,25 @@ h3.log-date
 	color: black;
 	text-align: right;
 }
-.backlinks
+.btn-primary
 {
 	position:relative;
-	top:100px;
+	top:200px;
 }
+.arrow
+{
+	position: relative;
+	top: 0px;
+	width : 100%;
+	.prev
+	{
+		position: absolute;
+		left : 0px;
+	}
+	.next
+	{
+		position: absolute;
+		right : 0px;
+	}
+}
+

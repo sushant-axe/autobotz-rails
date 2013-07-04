@@ -1,0 +1,9 @@
+#!/bin/bash
+# My first script
+echo "===============EXECUTING BOT WAIT!================================="
+cd ${OPENSHIFT_DATA_DIR}
+cd ..
+cd repo
+ruby irc_log.rb
+echo "===============BOT EXECUTED!================================="
+

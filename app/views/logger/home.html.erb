@@ -1,6 +1,10 @@
-<div class="log">
+
+<div class ="well1">
+<div class ="well">
 	<h4>Logs:</h4>
 	<% @logs.each do |log| %>
-		<h5><ul><li><%= link_to("#{log}" ,{:action => 'show', :id => log.to_s}) %></li></ul></h5>
+		<h5><ul><li><%= link_to("#{log}" ,{:action => 'show', :key => log.to_s}) %></li></ul></h5>
 	<% end %>
 </div>
+</div>
+

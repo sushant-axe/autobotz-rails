@@ -7,8 +7,6 @@ Bundler.require(:bot)
 #127.11.185.2 -p 16379
 
 redis = Redis.new(:host => '127.11.185.2', :port => 16379) #This is for development
-# redis = Redis::new(:path=>"#{ENV['OPENSHIFT_GEAR_DIR']}tmp/redis.sock") #This is for production
-
 #================================================This is the code of the bot ===================================
 
 $channels_to_be_tracked = ["#nitk-autobotz"]
@@ -17,7 +15,7 @@ $key = time.day.to_s + "-" + time.month.to_s + "-" + time.year.to_s
 class Logger
 
   attr_accessor :redis
-on 
+
   def initialize(ip,port) 
     #@redis = Redis.new(:host => ip, :port => port) #This is for development
      @redis = Redis.new(:host => '127.11.185.2', :port => 16379)
@@ -31,15 +29,26 @@ on
   def get_log_time
     t = get_time
     "#{t.hour}:#{t.min}"
-    end
+  end
+
+  def setkey
+    $key = time.day.to_s + "-" + time.month.to_s + "-" + time.year.to_s
   end
 
   def log(channel,user,msg)
+    temp = Time.now.day.to_s + "-" + Time.now.month.to_s + "-" + Time.now.year.to_s
+    if(temp != $key )
+      $key = temp
+    end
     nick = Sanitize.clean(user.nick)
     @redis.RPUSH "#{$key}", "<#{get_log_time}>"+"#{nick}"+":"+Sanitize.clean(msg)
   end
 
-  def bot_log(channel,msg)    
+  def bot_log(channel,msg)   
+    temp = Time.now.day.to_s + "-" + Time.now.month.to_s + "-" + Time.now.year.to_s
+    if(temp != $key)
+      $key = temp
+    end
     @redis.RPUSH "#{$key}", "<#{get_log_time}>" + "autobotz"+ ":"+ msg
   end
 
@@ -51,7 +60,7 @@ bot = Cinch::Bot.new do
   configure do |c|
     c.server = "irc.freenode.org"
     c.channels = $channels_to_be_tracked
-    c.nick = 'autobotz-Sushant'
+    c.nick = 'autobotz-JetFire'
   end
 
 
@@ -91,46 +100,3 @@ end
 job1 = fork do
 	bot.start
 end
-
-#================================================This is the code of the bot ===================================
-
-
-
-
-# get '/message' do
-# 	channel = "#"+params[:channel].to_s
-# 	date = params[:date].to_s
-# 	puts channel
-# 	puts date
-# 	len=redis.LLEN "#{channel}:#{date}"
-# 	data = ''
-# 	if len == 0
-# 		"<html><h3>Log not found</h3></html>"
-# 	else
-# 		data = redis.lrange("#{channel}:#{date}",0,len)
-# 		data = data.reverse.join("<br />")
-# 	end
-# 	data
-# end
-
-# get '/:channel' do
-# 	channel = params[:channel].to_s
-# 	len = redis.LLEN "\##{channel}"
-# 	puts "Here =============================================== #{len}"
-# 	@data=" "
-# 	c = redis.lrange("\##{channel}",0,len).each do |f|
-# 		puts "inside"
-# 		@data+="<a href=\" /message?channel=#{channel}&date=#{f}\">#{f}</a><br /><br />"
-# 	end
-# 	erb :index
-# end
-
-# get '/' do
-# 	len = redis.LLEN "channels"
-# 	puts len
-# 	data=" "
-# 	redis.lrange("channels",0,len).each do |f|
-# 		data+="<a href=\" /#{f[1,f.length]}\">#{f}</a><br /><br />"
-# 	end
-# 	"<h3>Channels:</h3><br/><br/>"+data
-# end
