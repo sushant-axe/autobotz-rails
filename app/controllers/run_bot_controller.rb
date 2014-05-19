@@ -9,14 +9,14 @@ Bundler.require(:bot)
 redis = Redis.new(:host => '127.11.185.2', :port => 16379) #This is for development
 #================================================This is the code of the bot ===================================
 
-$channels_to_be_tracked = ["#nitk-autobotz"]
+$channels_to_be_tracked = ["#nitk-agile-dev"]
 time = Time.now.localtime("+05:30")
 $key = time.day.to_s + "-" + time.month.to_s + "-" + time.year.to_s
 class Logger
 
   attr_accessor :redis
 
-  def initialize(ip,port) 
+  def initialize(ip,port)
     #@redis = Redis.new(:host => ip, :port => port) #This is for development
      @redis = Redis.new(:host => '127.11.185.2', :port => 16379)
     #@redis = Redis::new(:path=>"#{ENV['OPENSHIFT_GEAR_DIR']}tmp/redis.sock") #This is for production
@@ -44,7 +44,7 @@ class Logger
     @redis.RPUSH "#{$key}", "<#{get_log_time}>"+"#{nick}"+":"+Sanitize.clean(msg)
   end
 
-  def bot_log(channel,msg)   
+  def bot_log(channel,msg)
     temp = get_time.day.to_s + "-" + get_time.month.to_s + "-" +get_time.year.to_s
     if(temp != $key)
       $key = temp
