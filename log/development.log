@@ -12477,3 +12477,196 @@ Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-19 23:19:14 +0530
+Processing by LoggerController#home as HTML
+Completed 500 Internal Server Error in 1ms
+
+Redis::CannotConnectError (Error connecting to Redis on 127.11.185.2:16379 (ECONNREFUSED)):
+  app/controllers/logger_controller.rb:4:in `home'
+
+
+  Rendered /home/sushant/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/sushant/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/sushant/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-19 23:20:55 +0530
+Processing by LoggerController#home as HTML
+Completed 500 Internal Server Error in 1ms
+
+Redis::CannotConnectError (Error connecting to Redis on 127.11.185.2:16379 (ECONNREFUSED)):
+  app/controllers/logger_controller.rb:4:in `home'
+
+
+  Rendered /home/sushant/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/sushant/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/sushant/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-19 23:21:16 +0530
+Processing by LoggerController#home as HTML
+  Rendered logger/home.html.erb within layouts/application (7.2ms)
+Compiled logger.css  (2355ms)  (pid 6339)
+Compiled run_bot.css  (1ms)  (pid 6339)
+Compiled application.css  (7ms)  (pid 6339)
+Compiled jquery.js  (1ms)  (pid 6339)
+Compiled jquery_ujs.js  (0ms)  (pid 6339)
+Compiled run_bot.js  (778ms)  (pid 6339)
+Compiled application.js  (814ms)  (pid 6339)
+Completed 200 OK in 3387ms (Views: 3386.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-19 23:21:20 +0530
+Served asset /application.css - 200 OK (51ms)
+
+
+Started GET "/assets/logger.css?body=1" for 127.0.0.1 at 2014-05-19 23:21:20 +0530
+Served asset /logger.css - 200 OK (27ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-19 23:21:20 +0530
+Served asset /jquery.js - 200 OK (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-19 23:21:20 +0530
+Served asset /jquery_ujs.js - 200 OK (1ms)
+
+
+Started GET "/assets/run_bot.css?body=1" for 127.0.0.1 at 2014-05-19 23:21:20 +0530
+Served asset /run_bot.css - 200 OK (2ms)
+
+
+Started GET "/assets/logger.js?body=1" for 127.0.0.1 at 2014-05-19 23:21:20 +0530
+Served asset /logger.js - 200 OK (1ms)
+
+
+Started GET "/assets/run_bot.js?body=1" for 127.0.0.1 at 2014-05-19 23:21:20 +0530
+Served asset /run_bot.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-19 23:21:20 +0530
+Served asset /application.js - 200 OK (6ms)
+
+
+Started GET "/notifications:15" for 127.0.0.1 at 2014-05-19 23:21:28 +0530
+Processing by LoggerController#show as HTML
+  Parameters: {"key"=>"notifications:15"}
+  Rendered logger/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 61ms (Views: 57.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/prev.png" for 127.0.0.1 at 2014-05-19 23:21:28 +0530
+Served asset /prev.png - 200 OK (10ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-19 23:21:32 +0530
+Processing by LoggerController#home as HTML
+  Rendered logger/home.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 29ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stat:processed:2014-03-30" for 127.0.0.1 at 2014-05-19 23:21:37 +0530
+Processing by LoggerController#show as HTML
+  Parameters: {"key"=>"stat:processed:2014-03-30"}
+Completed 500 Internal Server Error in 2ms
+
+Redis::CommandError (ERR Operation against a key holding the wrong kind of value):
+  app/controllers/logger_controller.rb:13:in `show'
+
+
+  Rendered /home/sushant/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/sushant/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/sushant/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.1ms)
+
+
+Started GET "/queues" for 127.0.0.1 at 2014-05-19 23:21:41 +0530
+Processing by LoggerController#show as HTML
+  Parameters: {"key"=>"queues"}
+Completed 500 Internal Server Error in 26ms
+
+Redis::CommandError (ERR Operation against a key holding the wrong kind of value):
+  app/controllers/logger_controller.rb:13:in `show'
+
+
+  Rendered /home/sushant/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/sushant/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/sushant/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.0ms)
+
+
+Started GET "/run_bot/run" for 127.0.0.1 at 2014-05-19 23:22:31 +0530
+Processing by RunBotController#run as HTML
+  Rendered run_bot/run.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/run_bot/run" for 127.0.0.1 at 2014-05-19 23:23:11 +0530
+Processing by RunBotController#run as HTML
+  Rendered run_bot/run.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 96ms (Views: 95.6ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/run_bot/run" for 127.0.0.1 at 2014-05-19 23:24:53 +0530
+Processing by RunBotController#run as HTML
+  Rendered run_bot/run.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 96ms (Views: 95.8ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/run_bot/run" for 127.0.0.1 at 2014-05-19 23:32:26 +0530
+Processing by RunBotController#run as HTML
+  Rendered run_bot/run.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 85ms (Views: 84.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-19 23:32:27 +0530
+Served asset /jquery.js - 304 Not Modified (4ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/run_bot/run" for 127.0.0.1 at 2014-05-19 23:33:42 +0530
+Processing by RunBotController#run as HTML
+  Rendered run_bot/run.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 91ms (Views: 90.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-19 23:33:43 +0530
+Served asset /jquery.js - 304 Not Modified (2ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/run_bot/run" for 127.0.0.1 at 2014-05-19 23:35:51 +0530
+Processing by RunBotController#run as HTML
+  Rendered run_bot/run.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 97ms (Views: 96.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-19 23:35:51 +0530
+Served asset /jquery.js - 304 Not Modified (4ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/run_bot/run" for 127.0.0.1 at 2014-05-19 23:40:36 +0530
+Processing by RunBotController#run as HTML
+  Rendered run_bot/run.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 86ms (Views: 85.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-19 23:40:37 +0530
+Served asset /jquery.js - 304 Not Modified (3ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/run_bot/run" for 127.0.0.1 at 2014-05-19 23:45:43 +0530
+Processing by RunBotController#run as HTML
+  Rendered run_bot/run.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 89ms (Views: 89.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-19 23:45:43 +0530
+Served asset /jquery.js - 304 Not Modified (2ms)
