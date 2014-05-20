@@ -1,7 +1,9 @@
-require 'redis'
 $ip = '127.11.185.2'
 $port = 16379
-# $ip = 'localhost'
-# $port = 6379
-#$redis = Redis.new(:host => 'localhost', :port => 6379) #for development
-$redis = Redis.new(:host => $ip , :port => $port ) #for production
+if Rails.env.development?
+    $ip = 'localhost'
+    $port = 6379
+end
+r = Redis.new(:host => $ip , :port => $port )
+$redis = Redis::Namespace.new(:logs,redis: r)
+$resource = Redis::Namespace.new(:resource,redis: r)

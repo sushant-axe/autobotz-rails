@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 
 gem 'mysql2'
 gem 'redis'
+gem 'redis-namespace'
 gem 'bootswatch-rails'
 
 # Gems used only for assets and not required
@@ -22,7 +23,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'bootstrap-sass'
 gem 'jquery-rails'
 
 group :bot do

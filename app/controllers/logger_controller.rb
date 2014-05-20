@@ -1,7 +1,15 @@
 class LoggerController < ApplicationController
 
 	def home
+	end
+
+	def logs
 		@logs = $redis.keys
+		@logs = @logs.reverse
+	end
+	def resources
+		len = $resource.LLEN("resource")
+		@resources = $resource.lrange("resource",0,len).uniq!
 	end
 	def show
 		logs = $redis.keys

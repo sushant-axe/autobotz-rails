@@ -1,71 +1,71 @@
-@import "bootswatch/cyborg/variables";
-@import "bootstrap";
-@import "bootswatch/cerulean/bootswatch";
+// @import "bootswatch/cyborg/variables";
+// @import "bootstrap";
+// @import "bootswatch/cerulean/bootswatch";
 
 
-h1
-{
-	text-weight: bold;
-}
-.well1
-{
-	position: relative;
-	width:20%;
-	margin : 0 auto;
-	padding : 20px;
-	h5 {text-align : center;}
-}
-h3.log-date
-{
-	color : #c2bfbc;
-}
-.show-log
-{
-	position:relative;
-	padding-left : 20px;
-	padding-top : 5px;
-	padding-bottom : 0px;
-	margin : 0 auto;
-	top: 40px;
-	width :90%;
-	border-radius : 10px;
+// h1
+// {
+// 	text-weight: bold;
+// }
+// .well1
+// {
+// 	position: relative;
+// 	width:20%;
+// 	margin : 0 auto;
+// 	padding : 20px;
+// 	h5 {text-align : center;}
+// }
+// h3.log-date
+// {
+// 	color : #c2bfbc;
+// }
+// .show-log
+// {
+// 	position:relative;
+// 	padding-left : 20px;
+// 	padding-top : 5px;
+// 	padding-bottom : 0px;
+// 	margin : 0 auto;
+// 	top: 40px;
+// 	width :90%;
+// 	border-radius : 10px;
 
-	table
-	{
-		font-size: 18px;
+// 	table
+// 	{
+// 		font-size: 18px;
 
-	}
-}
-.footer
-{
-  	position:relative;
-   	top:500px;
-   	width:100%;
-   	height:20px;
-   	background:#6cf;
-	background : #b9b7b6;
-	color: black;
-	text-align: right;
-}
-.btn-primary
-{
-	position:relative;
-	top:200px;
-}
-.arrow
-{
-	position: relative;
-	top: 0px;
-	width : 100%;
-	.prev
-	{
-		position: absolute;
-		left : 0px;
-	}
-	.next
-	{
-		position: absolute;
-		right : 0px;
-	}
-}
+// 	}
+// }
+// .footer
+// {
+//   	position:relative;
+//    	top:500px;
+//    	width:100%;
+//    	height:20px;
+//    	background:#6cf;
+// 	background : #b9b7b6;
+// 	color: black;
+// 	text-align: right;
+// }
+// .btn-primary
+// {
+// 	position:relative;
+// 	top:200px;
+// }
+// .arrow
+// {
+// 	position: relative;
+// 	top: 0px;
+// 	width : 100%;
+// 	.prev
+// 	{
+// 		position: absolute;
+// 		left : 0px;
+// 	}
+// 	.next
+// 	{
+// 		position: absolute;
+// 		right : 0px;
+// 	}
+// }
 

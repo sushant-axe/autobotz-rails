@@ -1,0 +1,8 @@
+<div class ="col-lg-6 bsa well" style="margin-left: 100px;">
+	<h4>Logs:</h4>
+	<% @logs.each do |log| %>
+		<h5><ul><li><%= link_to("#{log}" ,{:action => 'show', :key => log.to_s}) %></li></ul></h5>
+	<% end %>
+</div>
+
+

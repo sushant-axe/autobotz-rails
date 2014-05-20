@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Autobotz</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+    <title>Autobotz</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
 </head>
 <body>
-	<h1><strong>#NITK-Autobotz.</strong></h1>
-	<div class="content">
-
-		<%= yield %>
-	</div>
-	<div class="footer">
-		<p><strong>(C)Nitk-Autobotz Team.</strong></p>
-	</div>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="../" class="navbar-brand">#NITK-Agile-Dev</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li><%= link_to "Logs",controller: "logger",action: "logs" %></li>
+                    <li><%= link_to "Resources",controller: "logger",action:"resources" %></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="page-header" id="banner" style="margin-top:80px;">
+            <h1>#NITK-Agile-Dev</h1>
+            <p class="lead">Quote?</p>
+        </div>
+        <%= yield %>
+    </div>
+    <div class="footer" style="margin-top:80px;">
+        <p><strong>Released under WTFPL - <%= link_to "Source","https://github.com/sushant94/autobotz-rails" %></strong></p>
+    </div>
 </body>
 </html>
