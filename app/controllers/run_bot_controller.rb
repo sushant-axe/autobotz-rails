@@ -12,7 +12,7 @@ port = 16379
 # ip = '127.0.0.1'
 # port = 6379
 
-redis = Redis.new(:host => ip, :port => port) #This is for development
+redis = Redis.new(:host => $ip, :port => $port) #This is for development
 #================================================This is the code of the bot ===================================
 
 $channels_to_be_tracked = ["#nitk-agile-dev"]
@@ -24,7 +24,7 @@ class Logger
 
   def initialize(ip,port)
     #@redis = Redis.new(:host => ip, :port => port) #This is for development
-     @redis = Redis.new(:host =>ip, :port => port)
+     @redis = Redis.new(:host =>$ip, :port => $port)
     #@redis = Redis::new(:path=>"#{ENV['OPENSHIFT_GEAR_DIR']}tmp/redis.sock") #This is for production
   end
 
