@@ -87,6 +87,12 @@ $bot = Cinch::Bot.new do
     logger.bot_log(m.channel,msg)
   end
 
+  on :message,"!resources" do |m|
+    msg = "#{m.user.nick} Resources can be found at http://autobotz-sushant94.rhcloud.com/logger/resources"
+    m.reply(msg)
+    logger.bot_log(m.channel,msg)
+  end
+
   on :message do |m|
     logger.log(m.channel,m.user,(m.params[1]).to_s)
   end
