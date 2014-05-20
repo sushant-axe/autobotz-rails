@@ -9,7 +9,7 @@ class LoggerController < ApplicationController
 	end
 	def resources
 		len = $resource.LLEN("resource")
-		@resources = $resource.lrange("resource",0,len).uniq!
+		@resources = $resource.lrange("resource",0,len)
 	end
 	def show
 		logs = $redis.keys
