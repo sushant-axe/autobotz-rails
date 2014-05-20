@@ -59,6 +59,10 @@ $bot = Cinch::Bot.new do
 
   @users = nil
 
+  on :message,"!commands" do |m|
+    message = "Available commands: !commands !users !user_count !hello !log !resources !ping_all !pong !r. Additional: #resource <link> - To add a Resource."
+    m.reply(message)
+  end
 
   on :message,"!users" do |m|
     names = "Users: "
