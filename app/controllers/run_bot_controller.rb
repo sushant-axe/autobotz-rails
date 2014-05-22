@@ -107,6 +107,13 @@ $bot = Cinch::Bot.new do
   on :message,"!stop" do |m|
   end
 
+  on :message,"!comic" do |m|
+    num = rand(1 .. 1370)
+    msg = "#{m.user.nick}, lighten up! Here's a comic ==>  https://xkcd.com/#{num}/"
+    m.reply(msg)
+    logger.bot_log(m.channel,msg)
+  end
+
   on :message, /^#resource (.+)$/ do |m,r|
   logger.log(m.channel,m.user,(m.params[1]).to_s)
   if r =~ /^#{URI::regexp(['http', 'https'])}$/
