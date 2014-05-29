@@ -136,7 +136,13 @@ on :message,"!ping_all" do |m|
   end
   m.reply("!pong")
 end
-
+ 
+ on :message,"!tales" do |m|
+  num=rand(1..29)
+  msg="140 character tales,but depict a thousand words.Food for thought #{m.user.nick} --> http://terriblytinytales.com/category/seasons/season-#{num}"
+  m.reply(msg)
+  logger.bot_log(m.channel,msg)
+end
 on :message, "!pong" do |m|
   unless @users.nil?
     @users.delete(m.user)
