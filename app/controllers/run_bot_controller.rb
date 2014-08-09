@@ -5,7 +5,7 @@ require 'rubygems'
 require 'bundler'
 Bundler.require(:bot)
 
-$channels_to_be_tracked = ["#nitk-agile-dev"]
+$channels_to_be_tracked = ["#nitk-ieee"]
 time = Time.now.localtime("+05:30")
 $key = time.day.to_s + "-" + time.month.to_s + "-" + time.year.to_s
 class Logger
@@ -28,7 +28,7 @@ class Logger
   end
 
   def setkey
-    $key = time.day.to_s + "-" + time.month.to_s + "-" + time.year.to_s
+    $key = "NITK-Hackathon"
   end
 
   def log(channel,user,msg)
@@ -45,7 +45,7 @@ class Logger
     if(temp != $key)
       $key = temp
     end
-    $redis.RPUSH "#{$key}", "<#{get_log_time}> " + "Autobotz-JetFire"+ ": "+ msg
+    $redis.RPUSH "#{$key}", "<#{get_log_time}> " + "Autobotz-JetFire+"+ ": "+ msg
   end
 
 end
@@ -54,7 +54,7 @@ $bot = Cinch::Bot.new do
   configure do |c|
     c.server = "irc.freenode.org"
     c.channels = $channels_to_be_tracked
-    c.nick = 'autobotz-JetFire'
+    c.nick = 'autobotz-JetFire+'
   end
 
   @users = nil
@@ -136,7 +136,7 @@ on :message,"!ping_all" do |m|
   end
   m.reply("!pong")
 end
- 
+
  on :message,"!tales" do |m|
   num=rand(1..29)
   msg="140 character tales,but depict a thousand words.Food for thought #{m.user.nick} --> http://terriblytinytales.com/category/seasons/season-#{num}"
