@@ -7,10 +7,12 @@ class LoggerController < ApplicationController
 		@logs = $redis.keys
 		@logs = @logs.reverse
 	end
+
 	def resources
 		len = $resource.LLEN("resource")
 		@resources = $resource.lrange("resource",0,len)
 	end
+
 	def show
 		logs = $redis.keys
 		index = logs.find_index(params[:key])
