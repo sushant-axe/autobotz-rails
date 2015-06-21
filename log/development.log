@@ -17257,3 +17257,183 @@ Served asset /run_bot.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-20 14:17:13 +0530
 Served asset /application.js - 304 Not Modified (1ms)
+  [1m[36m (27.8ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (29.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateLogs (20130627071321)
+DEPRECATION WARNING: `#timestamp` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/chinmay/autobotz-rails/db/migrate/20130627071321_create_logs.rb:6)
+  [1m[35m (17.8ms)[0m  CREATE TABLE `logs` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `message` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130627071321')
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+Migrating to AddSessionId (20130627074316)
+  [1m[35m (24.9ms)[0m  ALTER TABLE `logs` ADD `session_id` varchar(255)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130627074316')
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (2.1ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'autobotz_development'
+  AND fk.table_name = 'logs'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `logs`
+
+
+Started GET "/" for ::1 at 2015-06-21 19:34:27 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by LoggerController#home as HTML
+  Rendered logger/home.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 813ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"logs", :controller=>"logger"}):
+    14:             </div>
+    15:             <div class="navbar-collapse collapse" id="navbar-main">
+    16:                 <ul class="nav navbar-nav">
+    17:                     <li><%= link_to "Logs",controller: "logger",action: "logs" %></li>
+    18:                     <li><%= link_to "Resources",controller: "logger",action:"resources" %></li>
+    19:                 </ul>
+    20:                 <ul class="nav navbar-nav navbar-right">
+  app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb__2503951357163551639_70171217382460'
+
+
+  Rendered /Users/chinmay/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/chinmay/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/chinmay/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/chinmay/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (51.5ms)
+
+
+Started GET "/" for ::1 at 2015-06-21 19:36:01 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by LoggerController#home as HTML
+  Rendered logger/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 331ms (Views: 330.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f9e7c1541e1b8783561468c59162bd896007380f5a3799ef2169d3a3fdf40bed.css?body=1" for ::1 at 2015-06-21 19:36:02 +0530
+
+
+Started GET "/assets/bootstrap.min.self-72a3a8979f8dc98e61a5173ac5a0d3c9ad746fc4ff5f2d7485df35cf6bbe60ec.css?body=1" for ::1 at 2015-06-21 19:36:02 +0530
+
+
+Started GET "/assets/logger.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-21 19:36:02 +0530
+
+
+Started GET "/assets/run_bot.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-21 19:36:02 +0530
+
+
+Started GET "/assets/logger.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-21 19:36:02 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-21 19:36:02 +0530
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-21 19:36:02 +0530
+
+
+Started GET "/assets/run_bot.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-21 19:36:02 +0530
+
+
+Started GET "/assets/application.self-763edc40ac487adacabb9d8ff726cd3e8d38c640ad7af95ff25fde0f4dbdfe7c.js?body=1" for ::1 at 2015-06-21 19:36:02 +0530
+
+
+Started GET "/logger/logs" for ::1 at 2015-06-21 19:36:06 +0530
+Processing by LoggerController#logs as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+Redis::CannotConnectError (Error connecting to Redis on localhost:6379 (Errno::ECONNREFUSED)):
+  app/controllers/logger_controller.rb:7:in `logs'
+
+
+  Rendered /Users/chinmay/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/chinmay/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/chinmay/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/chinmay/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.5ms)
+
+
+Started GET "/" for ::1 at 2015-06-21 19:36:11 +0530
+Processing by LoggerController#home as HTML
+  Rendered logger/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 31ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f9e7c1541e1b8783561468c59162bd896007380f5a3799ef2169d3a3fdf40bed.css?body=1" for ::1 at 2015-06-21 19:36:11 +0530
+
+
+Started GET "/assets/bootstrap.min.self-72a3a8979f8dc98e61a5173ac5a0d3c9ad746fc4ff5f2d7485df35cf6bbe60ec.css?body=1" for ::1 at 2015-06-21 19:36:11 +0530
+
+
+Started GET "/assets/logger.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-21 19:36:11 +0530
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-21 19:36:11 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-21 19:36:11 +0530
+
+
+Started GET "/assets/run_bot.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-21 19:36:11 +0530
+
+
+Started GET "/assets/logger.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-21 19:36:11 +0530
+
+
+Started GET "/assets/run_bot.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-21 19:36:11 +0530
+
+
+Started GET "/assets/application.self-763edc40ac487adacabb9d8ff726cd3e8d38c640ad7af95ff25fde0f4dbdfe7c.js?body=1" for ::1 at 2015-06-21 19:36:11 +0530
+
+
+Started GET "/" for ::1 at 2015-06-21 19:36:32 +0530
+Processing by LoggerController#home as HTML
+  Rendered logger/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f9e7c1541e1b8783561468c59162bd896007380f5a3799ef2169d3a3fdf40bed.css?body=1" for ::1 at 2015-06-21 19:36:32 +0530
+
+
+Started GET "/assets/bootstrap.min.self-72a3a8979f8dc98e61a5173ac5a0d3c9ad746fc4ff5f2d7485df35cf6bbe60ec.css?body=1" for ::1 at 2015-06-21 19:36:32 +0530
+
+
+Started GET "/assets/logger.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-21 19:36:33 +0530
+
+
+Started GET "/assets/run_bot.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-21 19:36:33 +0530
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-21 19:36:33 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-21 19:36:33 +0530
+
+
+Started GET "/assets/logger.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-21 19:36:33 +0530
+
+
+Started GET "/assets/run_bot.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-21 19:36:33 +0530
+
+
+Started GET "/assets/application.self-763edc40ac487adacabb9d8ff726cd3e8d38c640ad7af95ff25fde0f4dbdfe7c.js?body=1" for ::1 at 2015-06-21 19:36:33 +0530
+
+
+Started GET "/logger/resources" for ::1 at 2015-06-21 19:36:34 +0530
+Processing by LoggerController#resources as HTML
+  Rendered logger/resources.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logger/logs" for ::1 at 2015-06-21 19:36:35 +0530
+Processing by LoggerController#logs as HTML
+  Rendered logger/logs.erb within layouts/application (0.4ms)
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-06-21 19:36:36 +0530
+Processing by LoggerController#home as HTML
+  Rendered logger/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 41ms (Views: 41.1ms | ActiveRecord: 0.0ms)

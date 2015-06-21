@@ -5,7 +5,7 @@ require 'rubygems'
 require 'bundler'
 Bundler.require(:bot)
 
-$channels_to_be_tracked = ["#nitk-ieee"]
+$channels_to_be_tracked = ["#nitk-ectf"]
 time = Time.now.localtime("+05:30")
 $key = time.day.to_s + "-" + time.month.to_s + "-" + time.year.to_s
 class Logger
