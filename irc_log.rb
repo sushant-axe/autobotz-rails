@@ -73,6 +73,12 @@ bot = Cinch::Bot.new do
     logger.bot_log(m.channel,names)
   end
 
+  on :message, "!slap" do |m|
+    msg = "I would love to slap #{m.user.nick} around with a large fishbot"
+    m.reply(msg)
+    logger.bot_log(m.channel,msg)    
+  end
+
   on :message,"!user_count" do |m|
     names = "#{m.user.nick}: Total_Users: #{m.channel.users.count}"
     m.reply("#{names}")
